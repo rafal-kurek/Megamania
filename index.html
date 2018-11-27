@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/data.js"></script>
+    <script type="text/javascript" src="js/controls.js"></script>
+    <script type="text/javascript" src="js/update.js"></script>
+    <script type="text/javascript" src="js/level.js"></script>
+    <script type="text/javascript" src="js/stage.js"></script>
+    <script type="text/javascript" src="js/move.js"></script>
+    <title>Megamania Atari XL/XE</title>
+    <style>
+        #can {
+            background-image: url("gfx/tlo.png");
+        }
+
+        .gfx {
+            display: none;
+        }
+
+        .gif {
+            position: absolute;
+            z-index: 3;
+        }
+
+    </style>
+    <script>
+        var main
+        window.addEventListener("load", function() {
+            
+            //inicjalizacja gry
+            main = new Main()
+            
+            //wszytkie dźwięki w grze utworzone dynamicznie przy załadowaniu strony 
+            var audio = document.createElement("audio")
+            audio.setAttribute("id", "shoot_audio")
+            audio.setAttribute("src", "sounds/shoot.mp3");
+            document.body.appendChild(audio);
+
+            var audio1 = document.createElement("audio")
+            audio1.setAttribute("id", "kill_audio")
+            audio1.setAttribute("src", "sounds/kill.mp3");
+            document.body.appendChild(audio1);
+
+            var audio2 = document.createElement("audio")
+            audio2.setAttribute("id", "loadEnergy_audio")
+            audio2.setAttribute("src", "sounds/loadEnergy.mp3");
+            document.body.appendChild(audio2);
+
+            var audio3 = document.createElement("audio")
+            audio3.setAttribute("id", "death_audio")
+            audio3.setAttribute("src", "sounds/death.mp3");
+            document.body.appendChild(audio3);
+
+            var audio4 = document.createElement("audio")
+            audio4.setAttribute("id", "bonus_audio")
+            audio4.setAttribute("src", "sounds/bonus.mp3");
+            document.body.appendChild(audio4);
+
+            var audio5 = document.createElement("audio")
+            audio5.setAttribute("id", "lowEnergy_audio")
+            audio5.setAttribute("src", "sounds/lowEnergy.mp3");
+            document.body.appendChild(audio5);
+
+
+        })
+
+    </script>
+</head>
+
+<body>
+    <div id="playfield">
+        <canvas id="can" width="1200" height="857" z-index="1"></canvas>
+        <div id=life></div>
+        <div id="bar">
+            <div id="energy">
+                <img src="gfx/energy.png" />
+            </div>
+        </div>
+        <img src="gfx/energy_font.png" id="energy_font" />
+        <div id="score">
+            <img src="gfx/0.png" />
+        </div>
+    </div>
+    <img src="gfx/ship.png" id="ship" class="gfx" />
+    <img src="gfx/bullet.png" id="bullet" class="gfx" />
+    <img src="gfx/enemy_bullet1.png" id="enemy_bullet1" class="gfx" />
+    <img src="gfx/enemy_bullet2.png" id="enemy_bullet2" class="gfx" />
+    <img src="gfx/enemy1.png" id="enemy1" class="gfx" />
+    <img src="gfx/enemy2.png" id="enemy2" class="gfx" />
+    <img src="gfx/enemy3.png" id="enemy3" class="gfx" />
+    <img src="gfx/enemy4.png" id="enemy4" class="gfx" />
+    <img src="gfx/death.gif" id="death" class="gif" />
+</body>
+
+</html>
