@@ -1,3 +1,2 @@
 # Megamania
-Reproduction of the Megamania on Atari, written in Javascript. My school project which has 3 levels. All materials are from
-screenshots I have made during gameplay in Atari emulator.
+Reproduction of the Megamania on Atari, written in Javascript. All materials were collected from the Atari emulator and were used only for this project. 
